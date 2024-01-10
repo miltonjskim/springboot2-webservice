@@ -2,22 +2,31 @@
 <html>
 <head>
         <title>
-            강홍규의 은밀한 취향
+            강홍규를 조롱합시다.
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
     {{>layout/header}}
 
-        <h1>강홍규의 은밀한 취향</h1>
+        <h1>강홍규를 조롱합시다.</h1>
         <div class="col-md-12">
+            <!-- 로그인 기능 영역 -->
             <div class="row">
                 <div class="col-md-6">
                     <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+                    {{#userName}}
+                        Logged in as: <span id="user">{{userName}}</span>
+                        <a href="/logout" class="btn btn-info active" role="button">로그아웃</a>
+                    {{/userName}}
+                    {{^userName}}
+                        <a href="/oauth2/authorization/google" class="btn btn-success active"
+                           roll="button">구글로 로그인</a>
+                    {{/userName}}
                 </div>
             </div>
             <br>
-            <!-- 목록 출력 영영 -->
+            <!-- 목록 출력 영역 -->
             <table class="table table-horizontal table-bordered">
                 <thead class="thead-strong">
                 <tr>
