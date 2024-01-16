@@ -29,8 +29,14 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation('org.springframework.boot:spring-boot-starter-mustache')
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client:2.7.1')
+    implementation('org.springframework.session:spring-session-jdbc')
+    testImplementation('org.springframework.security:spring-security-test')
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+jar {
+    enabled = false
 }
